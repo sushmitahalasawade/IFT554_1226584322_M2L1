@@ -31,16 +31,18 @@ const dataObj = JSON.parse(tempCourse);
 
 //create server
 const server = httpServer.createServer((req,res) => { // callback function
-    const urlParameter = url.parse(req.url,true);
-    console.log(urlParameter.query);
-    console.log(urlParameter.pathname);
-    if(urlParameter.query.id){
+    // const urlParameter = url.parse(req.url,true);
+    // console.log(urlParameter.query);
+    // console.log(urlParameter.pathname);
+    const {query,pathname} = url.parse(req.url,true); 
+    
+    if(query.id){
         //course page
-        if(urlParameter.pathname === "/" || urlParameter.pathname.toLowerCase() === '/courses'){
+        if(pathname === "/" || pathname.toLowerCase() === '/courses'){
             res.writeHead(200,{ // successfull
                 'Content-type':'text/html'
             });
-            const course =  dataObj[Number(urlParameter.query.id)];
+            const course =  dataObj[Number(query.id)];
             const strCourseName = JSON.stringify(course);
             const courseHTML = replaceTemplate(templateHTMLCourse,course); // function that will replace course values in html
             // res.end(` we received our first request from the client at resource ${urlParameter.pathname.toLowerCase()} with query parameter ${urlParameter.query.id}
