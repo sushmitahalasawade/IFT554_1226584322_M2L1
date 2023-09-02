@@ -1,0 +1,30 @@
+[
+    {
+        "id":0,
+        "courseName":"IFT 554",
+        "image":"📚",
+        "department":"Information Technology",
+        "instructor":"Dinesh Sthapit",
+        "credits":"3",
+        "description":"Middleware Programming and Database Security"
+    },
+    {
+        "id":1,
+        "courseName":"IFT 512",
+        "image":"📗",
+        "department":"Information Technology",
+        "instructor":"Robert Rucker",
+        "credits":"3",
+        "description":"Advanced Big data"
+    },
+    {
+        "id":2,
+        "courseName":"IFT 598",
+        "image":"📘",
+        "department":"Information Technology",
+        "instructor":"Aasma Elbadrwy",
+        "credits":"3",
+        "description":"Data Visualization"
+    }
+
+]

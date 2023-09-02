@@ -4,9 +4,11 @@ const fs = require('fs');
 
 // Read data from file
 const tempCourse = fs.readFileSync(
-    `${__dirname}/data.txt`,
+    `${__dirname}/data.json`,
     'utf-8'
 );
+
+const dataObj = JSON.parse(tempCourse);
 
 //create server
 const server = httpServer.createServer((req,res) => { // callback function
@@ -19,8 +21,9 @@ const server = httpServer.createServer((req,res) => { // callback function
             res.writeHead(200,{ // successfull
                 'Content-type':'text/html'
             });
+            const course =  dataObj[Number(urlParameter.query.id)];
             res.end(` we received our first request from the client at resource ${urlParameter.pathname.toLowerCase()} with query parameter ${urlParameter.query.id}
-            ${tempCourse}`);
+            ${JSON.stringify(course)}`);
 
         }
   
