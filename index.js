@@ -1,5 +1,13 @@
 const httpServer = require('http');
-const url = require('url')
+const url = require('url');
+const fs = require('fs');
+
+// Read data from file
+const tempCourse = fs.readFileSync(
+    `${__dirname}/data.txt`,
+    'utf-8'
+);
+
 //create server
 const server = httpServer.createServer((req,res) => { // callback function
     const urlParameter = url.parse(req.url,true);
@@ -11,7 +19,8 @@ const server = httpServer.createServer((req,res) => { // callback function
             res.writeHead(200,{ // successfull
                 'Content-type':'text/html'
             });
-            res.end(` we received our first request from the client at resource ${urlParameter.pathname.toLowerCase()} with query parameter ${urlParameter.query.id}`);
+            res.end(` we received our first request from the client at resource ${urlParameter.pathname.toLowerCase()} with query parameter ${urlParameter.query.id}
+            ${tempCourse}`);
 
         }
   
