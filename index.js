@@ -1,16 +1,16 @@
 const httpServer = require('http');
 const url = require('url');
 const fs = require('fs');
-const replaceTemplate = require('./replaceTemplate')
+const replaceTemplate = require('./modules/replaceTemplate')
 
 // Read data from file
 const tempCourse = fs.readFileSync(
-    `${__dirname}/data.json`,
+    `${__dirname}/data/data.json`,
     'utf-8'
 );
 
 const templateHTMLCourse = fs.readFileSync(
-    `${__dirname}/templateCourse.html`,
+    `${__dirname}/template/templateCourse.html`,
     'utf-8'
 );
 
