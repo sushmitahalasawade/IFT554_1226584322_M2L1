@@ -1,0 +1,11 @@
+{
+  "name": "ift554_1226584322_m2l1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sushmita Halasawade",
+  "license": "ISC"
+}
